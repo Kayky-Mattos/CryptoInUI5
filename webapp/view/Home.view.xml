@@ -133,23 +133,41 @@
                             id="txtsup3"
                         />
                         <Text
-                            text="{Assets>marketCapUsd}"
+                            text="{
+                                path: 'Assets>marketCapUsd',
+                                formatter: '.formatter.formatPricesMBT'
+                            }"
                             id="txtsup4"
                         />
                         <Text
-                            text="{Assets>vwap24Hr}"
+                            text="{
+                                path: 'Assets>vwap24Hr',
+                                formatter: '.formatter.formatPrice'
+                            }"
                             id="txtsup5"
                         />
                         <Text
-                            text="{Assets>supply}"
+                            text="{
+                                path: 'Assets>supply',
+                                formatter: '.formatter.formatPricesMBT'
+                            }"
                             id="txtsup6"
                         />
                         <Text
-                            text="{Assets>volumeUsd24Hr}"
+                            text="{
+                                path: 'Assets>volumeUsd24Hr',
+                                formatter: '.formatter.formatPricesMBT'
+                            }"
                             id="txtsup7"
                         />
-                        <Text
-                            text="{Assets>changePercent24Hr}"
+                        <ObjectStatus text="{
+                                path: 'Assets>changePercent24Hr',
+                                formatter: '.formatter.formatStatustxt'
+                            }"
+                            state="{
+                                 parts: [{path: 'Assets>changePercent24Hr'}],
+                                 formatter: '.formatter.formatStatus'
+                                 }"
                             id="txtsup8"
                         />
                     </cells>

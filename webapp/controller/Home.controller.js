@@ -14,26 +14,19 @@ sap.ui.define(
     "use strict";
 
     return Controller.extend("com.kayky.project1.controller.Home", {
+      formatter: formatter,
       onInit: function () {
-        const that = this;
-        let config = {
-          method: "GET",
-          maxBodyLength: Infinity,
-          url: "https://api.coincap.io/v2/assets",
-          async: false,
-          headers: {
-            Authorization: sensitives.auth(),
-          },
-          success: function (response) {
-            const oModel = new JSONModel(response);
+        var that = this;
+        models
+          .getAssets()
+          .then((response) => {
+            var oModel = new JSONModel(response);
             that.getView().setModel(oModel, "Assets");
             console.log(response);
-          }.bind(this),
-          error: function (err) {
-            console.log(err);
-          },
-        };
-        $.ajax(config);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
       },
       onPress: function () {},
     });
