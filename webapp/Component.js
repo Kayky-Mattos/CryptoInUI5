@@ -7,8 +7,9 @@ sap.ui.define(
     "sap/ui/core/UIComponent",
     "sap/ui/Device",
     "com/kayky/project1/model/models",
+    "com/kayky/project1/connection/connector",
   ],
-  function (UIComponent, Device, models) {
+  function (UIComponent, Device, models, connector) {
     "use strict";
 
     return UIComponent.extend("com.kayky.project1.Component", {
@@ -30,6 +31,8 @@ sap.ui.define(
 
         // set the device model
         this.setModel(models.createDeviceModel(), "device");
+
+        // connector.init(this);
       },
     });
   }

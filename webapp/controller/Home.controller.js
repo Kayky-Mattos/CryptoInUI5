@@ -1,21 +1,24 @@
 sap.ui.define(
   [
-    "sap/ui/core/mvc/Controller",
+    "com/kayky/project1/controller/BaseController",
     "sap/ui/model/json/JSONModel",
     "com/kayky/project1/model/models",
     "sap/m/library",
     "com/kayky/project1/model/formatter",
-    "com/kayky/project1/model/sensitives",
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, JSONModel, models, library, formatter, sensitives) {
+  function (Controller, JSONModel, models, library, formatter) {
     "use strict";
 
     return Controller.extend("com.kayky.project1.controller.Home", {
       formatter: formatter,
       onInit: function () {
+        const oRouter = this.getRouter();
+        oRouter.getRoute("RouteHome").attachMatched(this.onRouteLoad, this);
+      },
+      onRouteLoad: function () {
         var that = this;
         models
           .ReturnAssets()
@@ -28,7 +31,6 @@ sap.ui.define(
             console.error(err);
           });
       },
-      onPress: function () {},
     });
   }
 );
