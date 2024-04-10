@@ -18,7 +18,7 @@ sap.ui.define(
       onInit: function () {
         var that = this;
         models
-          .getAssets()
+          .ReturnAssets()
           .then((response) => {
             var oModel = new JSONModel(response);
             that.getView().setModel(oModel, "Assets");

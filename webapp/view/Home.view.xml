@@ -13,14 +13,8 @@
                 <SearchField
                     id="searchField"
                     liveChange="onSearch"
-                    width="50%"
-                    placeholder="{i18n>searchPlaceholder}"
-                />
-                <SearchField
-                    id="searchFieldoData"
-                    search="onSearchoData"
-                    width="50%"
-                    placeholder="{i18n>searchPlaceholder}"
+                    width="100%"
+                    placeholder=""
                 />
                 <ToolbarSeparator id="tbs1" />
             </Toolbar>
