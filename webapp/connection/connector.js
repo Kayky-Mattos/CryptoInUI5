@@ -44,15 +44,13 @@ sap.ui.define(
 
                     if (getUrl) {
                       item.url_img = getUrl.img_url;
-                      item.explorer = getUrl.img_url;
                     }
                   });
+                  resolve(response);
                 })
                 .catch((err) => {
                   console.error(err);
                 });
-
-              resolve(response);
             },
             error: function (err) {
               reject(err);
