@@ -115,10 +115,22 @@
                             text="{Assets>rank}"
                             id="txtsup1"
                         />
-                        <Text
-                            text="{Assets>name}"
-                            id="txtsup2"
-                        />
+                        
+                        <HBox alignItems="Center" id="hboxname">
+                            <Image 
+                                id="imgname"
+                                src= "{Assets>explorer}"
+                                height="1.9rem"
+                                width="1.9rem"
+                            />
+                            <ObjectIdentifier
+                                id="oiname"
+                                title="{Assets>name}"
+                                text="{Assets>symbol}"
+                                class="sapUiTinyMargin"
+                            />
+                        </HBox>
+
                         <Text
                             text="{
                                 path: 'Assets>priceUsd',

@@ -80,9 +80,7 @@
         {
           "name": "RouteHome",
           "pattern": ":?query:",
-          "target": [
-            "TargetHome"
-          ]
+          "target": ["TargetHome"]
         }
       ],
       "targets": {

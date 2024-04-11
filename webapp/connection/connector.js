@@ -23,12 +23,35 @@ sap.ui.define(
         return new Promise((resolve, reject) => {
           var config = {
             method: "GET",
-            maxBodyLength: Infinity,
             url: "https://api.coincap.io/v2/assets",
             headers: {
               Authorization: sensitives.auth(),
             },
             success: function (response) {
+              let dataAssets = response;
+
+              fetch("../model/criptoIcons.json")
+                .then((responseIcon) => {
+                  return responseIcon.json();
+                })
+                .then((responseIcon) => {
+                  let dataIcon = responseIcon;
+
+                  Array.from(dataAssets.data).forEach((item) => {
+                    const getUrl = Array.from(dataIcon.data).find(
+                      (data) => data.symbol === item.symbol
+                    );
+
+                    if (getUrl) {
+                      item.url_img = getUrl.img_url;
+                      item.explorer = getUrl.img_url;
+                    }
+                  });
+                })
+                .catch((err) => {
+                  console.error(err);
+                });
+
               resolve(response);
             },
             error: function (err) {
