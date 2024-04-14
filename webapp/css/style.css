@@ -1,1 +1,17 @@
-/* Enter your custom styles here */
+.sapMListTblCell:hover {
+  background-color: #ebebeb;
+}
+
+.sapMListTblRow:hover {
+  background-color: #ebebeb;
+}
+.customheader {
+  height: 3em;
+}
+.textoHeader {
+  font-size: medium;
+  font-weight: bold;
+}
+.headerConfig {
+  width: "2em";
+}

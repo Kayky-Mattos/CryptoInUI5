@@ -2,6 +2,7 @@
     controllerName="com.kayky.project1.controller.Home"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
+    xmlns:l="sap.ui.layout"
     xmlns="sap.m"
 >
     <Page
@@ -19,166 +20,173 @@
                 <ToolbarSeparator id="tbs1" />
             </Toolbar>
         </subHeader>
-        <Table
-            id="idProductsTable"
-            items="{Assets>/data}"
-        >
-            <columns>
-                <Column
-                    id="col1"
-                    width="6em"
-                    hAlign="Left"
-                >
-                    <Label
-                        text="Rank"
-                        id="Rankid"
-                    />
-                </Column>
-                <Column
-                    id="col2"
-                    width="12em"
-                    hAlign="Left"
-                >
-                    <Label
-                        text="Name"
-                        id="txt2"
-                    />
-                </Column>
-                <Column
-                    id="col3"
-                    width="8em"
-                    hAlign="Left"
-                >
-                    <Label
-                        text="Price"
-                        id="txt3"
-                    />
-                </Column>
-                <Column
-                    id="col4"
-                    hAlign="Left"
-                    width="10em"
-                >
-                    <Label
-                        text="Market Cap"
-                        id="txt4"
-                    />
-                </Column>
-                <Column
-                    id="col5"
-                    hAlign="Left"
-                    width="10em"
-                >
-                    <Label
-                        text="VWAP(24Hr)"
-                        id="txt5"
-                    />
-                </Column>
-                <Column
-                    id="col6"
-                    hAlign="Left"
-                    width="6em"
-                >
-                    <Label
-                        text="Supply"
-                        id="txt6"
-                    />
-                </Column>
-                <Column
-                    id="col7"
-                    hAlign="Left"
-                    width="10em"
-                >
-                    <Label
-                        text="Volume(24Hr)"
-                        id="txt7"
-                    />
-                </Column>
-                <Column
-                    id="col8"
-                    hAlign="Left"
-                    width="10em"
-                >
-                    <Label
-                        text="Change(24Hr)"
-                        id="txt8"
-                    />
-                </Column>
-            </columns>
-            <items>
-                <ColumnListItem
-                    vAlign="Middle"
-                    id="cl1"
-                >
-                    <cells>
-                        <Text
-                            text="{Assets>rank}"
-                            id="txtsup1"
+        <content>
+            <Table
+                id="idProductsTable"
+                items="{Assets>/data}"
+            >
+                <columns>
+                    <Column
+                        id="col1"
+                        width="6em"
+                        hAlign="Left"
+                        class="sapMListTblRow sapMListTblCell"
+                    >
+                        <Label
+                            text="Rank"
+                            id="Rankid"
                         />
-                        
-                        <HBox alignItems="Center" id="hboxname">
-                            <Image 
-                                id="imgname"
-                                src= "{Assets>url_img}"
-                                height="1.9rem"
-                                width="1.9rem"
+                    </Column>
+                    <Column
+                        id="col2"
+                        width="12em"
+                        hAlign="Left"
+                    >
+                        <Label
+                            text="Name"
+                            id="txt2"
+                        />
+                    </Column>
+                    <Column
+                        id="col3"
+                        width="8em"
+                        hAlign="Left"
+                    >
+                        <Label
+                            text="Price"
+                            id="txt3"
+                        />
+                    </Column>
+                    <Column
+                        id="col4"
+                        hAlign="Left"
+                        width="10em"
+                    >
+                        <Label
+                            text="Market Cap"
+                            id="txt4"
+                        />
+                    </Column>
+                    <Column
+                        id="col5"
+                        hAlign="Left"
+                        width="10em"
+                    >
+                        <Label
+                            text="VWAP(24Hr)"
+                            id="txt5"
+                        />
+                    </Column>
+                    <Column
+                        id="col6"
+                        hAlign="Left"
+                        width="6em"
+                    >
+                        <Label
+                            text="Supply"
+                            id="txt6"
+                        />
+                    </Column>
+                    <Column
+                        id="col7"
+                        hAlign="Left"
+                        width="10em"
+                    >
+                        <Label
+                            text="Volume(24Hr)"
+                            id="txt7"
+                        />
+                    </Column>
+                    <Column
+                        id="col8"
+                        hAlign="Left"
+                        width="9em"
+                    >
+                        <Label
+                            text="Change(24Hr)"
+                            id="txt8"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        vAlign="Middle"
+                        id="cl1"
+                    >
+                        <cells>
+                            <Text
+                                text="{Assets>rank}"
+                                id="txtsup1"
                             />
-                            <ObjectIdentifier
-                                id="oiname"
-                                title="{Assets>name}"
-                                text="{Assets>symbol}"
-                                class="sapUiTinyMargin"
-                            />
-                        </HBox>
 
-                        <Text
-                            text="{
+                            <HBox
+                                alignItems="Center"
+                                id="hboxname"
+                            >
+                                <Image
+                                    id="imgname"
+                                    src="{Assets>url_img}"
+                                    height="1.9rem"
+                                    width="1.9rem"
+                                />
+                                <ObjectIdentifier
+                                    id="oiname"
+                                    title="{Assets>name}"
+                                    text="{Assets>symbol}"
+                                    class="sapUiTinyMargin"
+                                />
+                            </HBox>
+
+                            <Text
+                                text="{
                                 path: 'Assets>priceUsd',
                                 formatter: '.formatter.formatPrice'
                             }"
-                            id="txtsup3"
-                        />
-                        <Text
-                            text="{
+                                id="txtsup3"
+                            />
+                            <Text
+                                text="{
                                 path: 'Assets>marketCapUsd',
                                 formatter: '.formatter.formatPricesMBT'
                             }"
-                            id="txtsup4"
-                        />
-                        <Text
-                            text="{
+                                id="txtsup4"
+                            />
+                            <Text
+                                text="{
                                 path: 'Assets>vwap24Hr',
                                 formatter: '.formatter.formatPrice'
                             }"
-                            id="txtsup5"
-                        />
-                        <Text
-                            text="{
+                                id="txtsup5"
+                            />
+                            <Text
+                                text="{
                                 path: 'Assets>supply',
                                 formatter: '.formatter.formatPricesMBT'
                             }"
-                            id="txtsup6"
-                        />
-                        <Text
-                            text="{
+                                id="txtsup6"
+                            />
+                            <Text
+                                text="{
                                 path: 'Assets>volumeUsd24Hr',
                                 formatter: '.formatter.formatPricesMBT'
                             }"
-                            id="txtsup7"
-                        />
-                        <ObjectStatus text="{
+                                id="txtsup7"
+                            />
+                            <ObjectStatus
+                                text="{
                                 path: 'Assets>changePercent24Hr',
                                 formatter: '.formatter.formatStatustxt'
                             }"
-                            state="{
+                                state="{
                                  parts: [{path: 'Assets>changePercent24Hr'}],
                                  formatter: '.formatter.formatStatus'
                                  }"
-                            id="txtsup8"
-                        />
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
+                                id="txtsup8"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>
