@@ -15,14 +15,13 @@
                     id="searchField"
                     liveChange="onSearch"
                     width="100%"
-                    placeholder=""
+                    placeholder="{i18n>textPlaceHoldeFilter}"
                 />
-                <ToolbarSeparator id="tbs1" />
             </Toolbar>
         </subHeader>
         <content>
             <Table
-                id="idProductsTable"
+                id="list"
                 items="{Assets>/data}"
             >
                 <columns>
