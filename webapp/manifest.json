@@ -79,8 +79,18 @@
       "routes": [
         {
           "name": "RouteHome",
-          "pattern": ":?query:",
+          "pattern": "",
           "target": ["TargetHome"]
+        },
+        {
+          "name": "RouteExchanges",
+          "pattern": "Exchanges",
+          "target": ["TargetExchanges"]
+        },
+        {
+          "name": "RouteSwap",
+          "pattern": "Swap",
+          "target": ["TargetSwap"]
         }
       ],
       "targets": {
@@ -90,6 +100,20 @@
           "clearControlAggregation": false,
           "viewId": "Home",
           "viewName": "Home"
+        },
+        "TargetExchanges": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Exchanges",
+          "viewName": "Exchanges"
+        },
+        "TargetSwap": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Swap",
+          "viewName": "Swap"
         }
       }
     },

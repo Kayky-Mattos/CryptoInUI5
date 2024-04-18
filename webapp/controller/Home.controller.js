@@ -34,7 +34,6 @@ sap.ui.define(
           .ReturnAssets()
           .then((response) => {
             var oModel = new JSONModel(response);
-            // console.log(response);
             that.getView().setModel(oModel, "Assets");
             that.getView().getModel("Assets").refresh(true);
           })
@@ -57,6 +56,9 @@ sap.ui.define(
         } else {
           oBinding.filter([]);
         }
+      },
+      onPressButtonHmenuH: function (oEvent) {
+        this.onPressButtonHmenu(oEvent);
       },
     });
   }

@@ -34,6 +34,26 @@ sap.ui.define(
       getModel: function (sName) {
         return this.getView().getModel(sName);
       },
+      onPressButtonHmenu: function (oEvent) {
+        var sButtonId = oEvent.getSource().getId();
+
+        const oComponent = this.getOwnerComponent();
+        const oRouter = oComponent.getRouter();
+
+        switch (sButtonId) {
+          case this.getView().createId("lCoin"):
+            oRouter.navTo("RouteHome");
+            break;
+          case this.getView().createId("lExchanges"):
+            oRouter.navTo("RouteExchanges");
+            break;
+          case this.getView().createId("lSwap"):
+            oRouter.navTo("RouteSwap");
+            break;
+          default:
+            break;
+        }
+      },
 
       /**
        * Convenience method for setting the view model in every controller of the application.

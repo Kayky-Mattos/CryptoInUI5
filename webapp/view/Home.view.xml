@@ -5,10 +5,38 @@
     xmlns:l="sap.ui.layout"
     xmlns="sap.m"
 >
-    <Page
-        id="page"
-        title="{i18n>title}"
+    <FlexBox
+        justifyContent="SpaceAround"
+        id="fb1"
+        width="100%"
     >
+        <HBox
+            id="hbsection"
+            class="sectionclassH"
+            width="100%"
+        >
+            <Button
+                text="Coin"
+                id="lCoin"
+                class="sapUiSmallMargin buttonTransparent"
+                press="onPressButtonHmenuH"
+            />
+
+            <Button
+                id="lExchanges"
+                text="Exchanges"
+                class="sapUiSmallMargin buttonTransparent"
+                press="onPressButtonHmenuH"
+            />
+            <Button
+                id="lSwap"
+                text="Swap"
+                class="sapUiSmallMargin buttonTransparent"
+                press="onPressButtonHmenuH"
+            />
+        </HBox>
+    </FlexBox>
+    <Page id="page">
         <subHeader>
             <Toolbar id="toolb1">
                 <SearchField

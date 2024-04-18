@@ -20,3 +20,27 @@
   font-weight: bold;
   text-align: center;
 }
+.sectionclass {
+  background-color: #06a5e6 !important;
+  color: rgb(255, 22, 22) !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+
+.sectionclassH {
+  background-color: #06a5e6;
+}
+.buttonTransparent > .sapMBtnInner {
+  width: 100%;
+  background: var(--brand-mid) !important;
+  color: #fff !important;
+  border: 1px solid var(--brand-mid);
+  border-radius: 3px;
+  background-image: none;
+  text-shadow: none;
+}
+
+.buttonTransparent.sapMBtnIcon {
+  color: #fff !important;
+}

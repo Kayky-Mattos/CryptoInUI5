@@ -1,0 +1,46 @@
+<mvc:View
+    controllerName="com.kayky.project1.controller.Exchanges"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+>
+    <FlexBox
+        justifyContent="SpaceAround"
+        id="fb1"
+        width="100%"
+    >
+        <HBox
+            id="hbsection"
+            class="sectionclassH"
+            width="100%"
+        >
+            <Button
+                text="Coin"
+                id="lCoin"
+                class="sapUiSmallMargin buttonTransparent"
+                press="onPressButtonHmenuEX"
+            />
+
+            <Button
+                id="lExchanges"
+                text="Exchanges"
+                class="sapUiSmallMargin buttonTransparent"
+                press="onPressButtonHmenuEX"
+            />
+            <Button
+                id="lSwap"
+                text="Swap"
+                class="sapUiSmallMargin buttonTransparent"
+                press="onPressButtonHmenuEX"
+            />
+        </HBox>
+    </FlexBox>
+
+    <Page
+        id="page"
+        title="{i18n>titleExchanges}"
+    >
+        <content />
+    </Page>
+</mvc:View>
