@@ -48,8 +48,8 @@ sap.ui.define(
             oRouter.navTo("RouteExchanges");
             break;
           case this.getView().createId("lSwap"):
-            oRouter.navTo("RouteSwap");
-            break;
+            // oRouter.navTo("RouteSwap");
+            window.location.href = "https://app.shapeshift.com/#/trade";
           default:
             break;
         }

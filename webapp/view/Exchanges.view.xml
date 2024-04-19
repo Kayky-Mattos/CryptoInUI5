@@ -3,6 +3,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns:l="sap.ui.layout"
+    xmlns:shape="sap.suite.ui.commons.statusindicator.Shape"
     xmlns="sap.m"
 >
     <FlexBox
@@ -41,6 +42,130 @@
         id="page"
         title="{i18n>titleExchanges}"
     >
-        <content />
+        <subHeader>
+            <Toolbar id="toolb1">
+                <SearchField
+                    id="searchField"
+                    liveChange="onSearch"
+                    width="100%"
+                    placeholder="{i18n>textPlaceHoldeFilterEX}"
+                />
+            </Toolbar>
+        </subHeader>
+        <content>
+            <Table
+                id="list"
+                items="{Exchanges>/data}"
+            >
+                <columns>
+                    <Column
+                        id="col1"
+                        width="6em"
+                        hAlign="Left"
+                        class="sapMListTblRow sapMListTblCell"
+                    >
+                        <Label
+                            text="Rank"
+                            id="Rankid"
+                        />
+                    </Column>
+                    <Column
+                        id="col2"
+                        width="12em"
+                        hAlign="Left"
+                    >
+                        <Label
+                            text="Name"
+                            id="txt2"
+                        />
+                    </Column>
+                    <Column
+                        id="col3"
+                        width="12em"
+                        hAlign="Left"
+                    >
+                        <Label
+                            text="Trading Pairs"
+                            id="txt3"
+                        />
+                    </Column>
+                    <Column
+                        id="col5"
+                        hAlign="Left"
+                        width="12em"
+                    >
+                        <Label
+                            text="Volume(24Hr)"
+                            id="txt5"
+                        />
+                    </Column>
+                    <Column
+                        id="col6"
+                        hAlign="Left"
+                        width="12em"
+                    >
+                        <Label
+                            text="Total(%)"
+                            id="txt6"
+                        />
+                    </Column>
+                    <Column
+                        id="col7"
+                        hAlign="Left"
+                        width="10em"
+                    >
+                        <Label
+                            text="Status"
+                            id="txt7"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        vAlign="Middle"
+                        id="cl1"
+                    >
+                        <cells>
+                            <Text
+                                text="{Exchanges>rank}"
+                                id="txtsup1"
+                            />
+                            <Text
+                                text="{
+                                path: 'Exchanges>name'
+                            }"
+                                id="txtsup4"
+                            />
+                            <Text
+                                text="{
+                                path: 'Exchanges>tradingPairs'
+                            }"
+                                id="txtsup5"
+                            />
+                            <Text
+                                text="{
+                                path: 'Exchanges>volumeUsd',
+                                formatter: '.formatter.formatPricesMBT'
+                            }"
+                                id="txtsup6"
+                            />
+                            <ObjectStatus
+                                text="{
+                                path: 'Exchanges>percentTotalVolume',
+                                formatter: '.formatter.formatStatustxt'
+                            }"
+                                id="txtsup8"
+                            />
+                            <ObjectStatus
+                                text=" "
+                                state="{path: 'Exchanges>socket', formatter: '.formatter.statusText'}"
+                                icon="{path: 'Exchanges>socket', formatter: '.formatter.statusIcon'}"
+                                id="objstatusc"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>

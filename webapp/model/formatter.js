@@ -46,7 +46,7 @@ sap.ui.define(["sap/ui/core/format/NumberFormat"], (NumberFormat) => {
 
       // Formate o número com 2 casas decimais
       if (value > 0) {
-        var numeroFormatado = value.toFixed(2);
+        var numeroFormatado = parseFloat(value).toFixed(2);
       }
 
       // Adicione o sufixo correspondente ao índice ao número formatado
@@ -63,6 +63,16 @@ sap.ui.define(["sap/ui/core/format/NumberFormat"], (NumberFormat) => {
       }
 
       return "Success";
+    },
+    statusIcon: function () {
+      return "sap-icon://circle-task-2";
+    },
+    statusText: function (sValue) {
+      if (sValue == true) {
+        return "Success";
+      } else {
+        return "Error";
+      }
     },
   };
 });

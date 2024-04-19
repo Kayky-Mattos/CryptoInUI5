@@ -59,6 +59,24 @@ sap.ui.define(
           $.ajax(config);
         });
       },
+      getExchanges: function () {
+        return new Promise((resolve, reject) => {
+          var config = {
+            method: "GET",
+            url: "https://api.coincap.io/v2/exchanges",
+            headers: {
+              Authorization: sensitives.auth(),
+            },
+            success: function (response) {
+              resolve(response);
+            },
+            error: function (err) {
+              reject(err);
+            },
+          };
+          $.ajax(config);
+        });
+      },
     };
   }
 );

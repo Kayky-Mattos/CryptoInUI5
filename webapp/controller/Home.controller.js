@@ -29,9 +29,12 @@ sap.ui.define(
         oRouter.getRoute("RouteHome").attachMatched(this.onRouteLoad, this);
       },
       onRouteLoad: function () {
+        const list = this.byId("list");
+        list.setBusy(true);
+
         var that = this;
         models
-          .ReturnAssets()
+          .returnAssets()
           .then((response) => {
             var oModel = new JSONModel(response);
             that.getView().setModel(oModel, "Assets");
@@ -39,6 +42,9 @@ sap.ui.define(
           })
           .catch((err) => {
             console.error(err);
+          })
+          .finally(() => {
+            list.setBusy(false);
           });
       },
       onSearch: function (oEvent) {

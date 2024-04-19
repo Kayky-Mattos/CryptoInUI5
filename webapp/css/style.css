@@ -44,3 +44,7 @@
 .buttonTransparent.sapMBtnIcon {
   color: #fff !important;
 }
+.statusIcon {
+  width: 20px;
+  height: 20px;
+}

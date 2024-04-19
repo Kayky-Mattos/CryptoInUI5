@@ -23,9 +23,19 @@ sap.ui.define(
         return oModel;
       },
 
-      ReturnAssets: function () {
+      returnAssets: function () {
         return connector
           .getAsset()
+          .then((response) => {
+            return response;
+          })
+          .catch((err) => {
+            return err;
+          });
+      },
+      returnExchanges: function () {
+        return connector
+          .getExchanges()
           .then((response) => {
             return response;
           })
